@@ -2,8 +2,8 @@ const express = require('express');
 const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
 const fs = require('fs');
-// Ads management
-const adminAdsRoutes = require('./src/routes/admin/adminAdsRoutes');
+const morgan = require('morgan');
+
 const { getActiveAds } = require('./src/models/adsModel');
 const session = require('express-session');
 const publicRoutes = require('./src/routes/publicRoutes');
@@ -18,6 +18,7 @@ const kbbiData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'kbbi.j
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
@@ -29,15 +30,30 @@ app.set('layout', 'layout');
 app.set('layout extractScripts', true);
 app.set('layout extractStyles', true);
 
+// Morgan logging middleware
+if (NODE_ENV === 'production') {
+  app.use(morgan('combined')); // Apache combined format for production
+} else {
+  app.use(morgan('dev')); // Colored output for development
+}
+
 // Middleware
 app.use(textCompression()); // Enable text compression
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Session configuration with MemoryStore
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'kbbi-secret',
+  secret: process.env.SESSION_SECRET || 'kbbi-secret-change-in-production',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  cookie: {
+    secure: NODE_ENV === 'production' && process.env.HTTPS === 'true',
+    httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  },
+  name: 'kbbi.sid' // Custom session name
 }));
 
 // Expose active ads to public views only

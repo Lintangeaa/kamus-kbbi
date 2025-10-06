@@ -2,6 +2,7 @@ module.exports = {
   apps: [{
     name: 'kamus-kbbi',
     script: 'server.js',
+    interpreter: 'bun',
     instances: 1,
     autorestart: true,
     watch: false,
@@ -9,12 +10,16 @@ module.exports = {
     env: {
       NODE_ENV: 'development',
       PORT: 3000,
-      HOST: '127.0.0.1'
+      HOST: '127.0.0.1',
+      SESSION_SECRET: 'kbbi-dev-secret-change-in-production'
     },
     env_production: {
       NODE_ENV: 'production',
       PORT: 7500,
-      HOST: '0.0.0.0'  // Penting: bind ke semua interface
+      HOST: '0.0.0.0',  // Penting: bind ke semua interface
+      SESSION_SECRET: 'your-super-secret-session-key-change-in-production',
+      // HTTPS configuration
+      HTTPS: 'false'
     },
     error_file: './logs/err.log',
     out_file: './logs/out.log',
@@ -24,6 +29,10 @@ module.exports = {
     merge_logs: true,
     max_restarts: 10,
     min_uptime: '10s',
-    restart_delay: 4000
+    restart_delay: 4000,
+    // Additional PM2 configuration for better performance
+    kill_timeout: 5000,
+    wait_ready: true,
+    listen_timeout: 3000
   }]
 };
