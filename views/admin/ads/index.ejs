@@ -23,7 +23,7 @@
                             <td><%= a.name %></td>
                             <td>
                                 <% if (a.imageUrl) { %>
-                                    <img src="<%= a.imageUrl %>" alt="ad" style="height:40px"/>
+                                    <img src="<%= a.imageUrl %>" alt="ad" style="height:40px" loading="lazy" class="img-fluid"/>
                                 <% } else { %>
                                     <span class="text-muted">-</span>
                                 <% } %>
