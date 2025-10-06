@@ -1,0 +1,88 @@
+{
+  "kata": {
+    "bahasa": {
+      "definisi": "sistem lambang bunyi yang arbitrer, yang digunakan oleh anggota suatu masyarakat untuk bekerja sama, berinteraksi, dan mengidentifikasikan diri",
+      "contoh": [
+        "Bahasa Indonesia adalah bahasa resmi negara kita",
+        "Setiap daerah memiliki bahasa daerah masing-masing"
+      ]
+    },
+    "belajar": {
+      "definisi": "berusaha memperoleh kepandaian atau ilmu",
+      "contoh": [
+        "Siswa belajar matematika di sekolah",
+        "Anak-anak belajar membaca dan menulis"
+      ]
+    },
+    "indonesia": {
+      "definisi": "negara di Asia Tenggara yang terletak di antara benua Asia dan Australia",
+      "contoh": [
+        "Indonesia adalah negara kepulauan terbesar di dunia",
+        "Jakarta adalah ibu kota Indonesia"
+      ]
+    },
+    "kamus": {
+      "definisi": "buku acuan yang memuat kata dan ungkapan, biasanya disusun menurut abjad, berikut keterangan tentang makna, pemakaian, atau terjemahannya",
+      "contoh": [
+        "Kamus KBBI sangat berguna untuk mencari arti kata",
+        "Saya membeli kamus bahasa Inggris yang baru"
+      ]
+    },
+    "kata": {
+      "definisi": "satuan bahasa yang dapat berdiri sendiri, terjadi dari morfem tunggal (misalnya batu, rumah, datang) atau gabungan morfem (misalnya pejuang, mengikuti, kekuasaan)",
+      "contoh": [
+        "Setiap kata memiliki arti dan fungsi tertentu",
+        "Kata-kata dalam bahasa Indonesia sangat beragam"
+      ]
+    },
+    "definisi": {
+      "definisi": "pernyataan atau rumusan tentang ruang lingkup dan ciri-ciri suatu konsep yang menjadi pokok pembicaraan dan studi",
+      "contoh": [
+        "Definisi kata 'bahasa' sangat luas dan kompleks",
+        "Dalam kamus, setiap kata memiliki definisi yang jelas"
+      ]
+    },
+    "arti": {
+      "definisi": "makna atau maksud yang terkandung dalam kata, frasa, atau kalimat",
+      "contoh": [
+        "Arti kata 'belajar' adalah berusaha memperoleh ilmu",
+        "Kita perlu memahami arti kata dengan benar"
+      ]
+    },
+    "makna": {
+      "definisi": "arti atau maksud yang terkandung dalam kata, frasa, atau kalimat",
+      "contoh": [
+        "Makna kata 'cinta' sangat dalam dan universal",
+        "Setiap kata memiliki makna yang berbeda-beda"
+      ]
+    },
+    "sinonim": {
+      "definisi": "kata yang memiliki makna yang sama atau hampir sama dengan kata lain",
+      "contoh": [
+        "Sinonim kata 'besar' adalah 'agung' atau 'luas'",
+        "Kamus sinonim membantu kita memperkaya kosakata"
+      ]
+    },
+    "antonim": {
+      "definisi": "kata yang berlawanan makna dengan kata lain",
+      "contoh": [
+        "Antonim kata 'panas' adalah 'dingin'",
+        "Memahami antonim membantu dalam memahami kontras makna"
+      ]
+    },
+    "tata": {
+      "definisi": "aturan atau sistem yang mengatur cara sesuatu disusun atau diatur",
+      "contoh": [
+        "Tata bahasa Indonesia memiliki aturan yang baku",
+        "Kita harus mematuhi tata tertib yang berlaku"
+      ]
+    },
+    "gramatika": {
+      "definisi": "ilmu tentang struktur bahasa yang meliputi morfologi, sintaksis, dan semantik",
+      "contoh": [
+        "Gramatika bahasa Indonesia cukup kompleks",
+        "Memahami gramatika penting untuk komunikasi yang baik"
+      ]
+    }
+  }
+}

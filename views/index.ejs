@@ -1,0 +1,82 @@
+
+<div class="hero-section text-center py-5">
+    <div class="container">
+        <h1 class="display-4 fw-bold text-primary mb-3">
+            <i class="fas fa-book-open"></i> Kamus KBBI
+        </h1>
+        <p class="lead mb-4">Kamus Besar Bahasa Indonesia Online</p>
+        
+        <!-- Search Form -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form action="/search" method="GET" class="search-form">
+                    <div class="input-group input-group-lg">
+                        <input type="text" class="form-control" name="q" 
+                               placeholder="Masukkan kata yang ingin dicari..." 
+                               required>
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fas fa-search me-2"></i>Cari
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="features-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Fitur Kamus KBBI</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-search fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Pencarian Cepat</h5>
+                        <p class="card-text">Temukan arti kata dengan mudah dan cepat menggunakan fitur pencarian yang responsif.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-book fa-3x text-success mb-3"></i>
+                        <h5 class="card-title">Definisi Lengkap</h5>
+                        <p class="card-text">Dapatkan definisi kata yang lengkap dan akurat berdasarkan Kamus Besar Bahasa Indonesia.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-mobile-alt fa-3x text-info mb-3"></i>
+                        <h5 class="card-title">Responsif</h5>
+                        <p class="card-text">Akses kamus kapan saja dan di mana saja dengan desain yang responsif untuk semua perangkat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popular Words Section -->
+<div class="popular-words py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Kata Populer</h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-3">
+                <a href="/search?q=bahasa" class="btn btn-outline-primary btn-lg w-100">Bahasa</a>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-3">
+                <a href="/search?q=belajar" class="btn btn-outline-primary btn-lg w-100">Belajar</a>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-3">
+                <a href="/search?q=indonesia" class="btn btn-outline-primary btn-lg w-100">Indonesia</a>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-3">
+                <a href="/search?q=kamus" class="btn btn-outline-primary btn-lg w-100">Kamus</a>
+            </div>
+        </div>
+    </div>
+</div>

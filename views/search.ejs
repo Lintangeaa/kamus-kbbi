@@ -1,0 +1,145 @@
+
+<div class="search-results">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="mb-4">
+                <% if (query) { %>
+                    Hasil Pencarian: "<%= query %>"
+                <% } else { %>
+                    Pencarian Kata
+                <% } %>
+            </h2>
+
+            <!-- Search Form -->
+            <form action="/search" method="GET" class="mb-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="q" 
+                           placeholder="Masukkan kata yang ingin dicari..." 
+                           value="<%= query %>" required>
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+
+            <% if (typeof message !== 'undefined' && message) { %>
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i><%= message %>
+                </div>
+            <% } %>
+
+            <% if (results && results.length > 0) { %>
+                <% results.forEach(function(result) { %>
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0">
+                                <i class="fas fa-book me-2"></i><%= result.word %>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="definition mb-3">
+                                <h6 class="text-muted">Definisi:</h6>
+                                <p class="mb-0"><%= result.definition %></p>
+                            </div>
+                            
+                            <% if (result.examples && result.examples.length > 0) { %>
+                                <div class="examples">
+                                    <h6 class="text-muted">Contoh Penggunaan:</h6>
+                                    <ul class="list-unstyled">
+                                        <% result.examples.forEach(function(example) { %>
+                                            <li class="mb-2">
+                                                <i class="fas fa-quote-left text-muted me-2"></i>
+                                                <%= example %>
+                                            </li>
+                                        <% }); %>
+                                    </ul>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else if (query) { %>
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    Maaf, kata "<%= query %>" tidak ditemukan dalam kamus.
+                </div>
+            <% } %>
+
+        </div>
+        
+        <div class="col-md-4">
+            <div class="sidebar">
+                <!-- AdSense Sidebar Banner -->
+                <div class="card mb-3">
+                    <div class="card-body text-center p-2">
+                        <div class="adsense-sidebar" style="
+                            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+                            border: 2px dashed #dee2e6;
+                            border-radius: 8px;
+                            padding: 30px 15px;
+                            color: #6c757d;
+                            font-size: 12px;
+                            min-height: 250px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-direction: column;
+                        ">
+                            <i class="fas fa-ad fa-lg mb-2"></i>
+                            <div>AdSense Banner</div>
+                            <small>300x250 Medium Rectangle</small>
+                            <!-- 
+                            Ganti div ini dengan kode AdSense Anda:
+                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                 data-ad-slot="XXXXXXXXXX"
+                                 data-ad-format="rectangle"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-lightbulb me-2"></i>Tips Pencarian</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Gunakan kata dasar untuk hasil yang lebih baik
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Hindari singkatan dan akronim
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Pastikan ejaan kata sudah benar
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h5><i class="fas fa-fire me-2"></i>Kata Populer</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-2">
+                            <a href="/search?q=bahasa" class="btn btn-outline-primary btn-sm">Bahasa</a>
+                            <a href="/search?q=belajar" class="btn btn-outline-primary btn-sm">Belajar</a>
+                            <a href="/search?q=indonesia" class="btn btn-outline-primary btn-sm">Indonesia</a>
+                            <a href="/search?q=kamus" class="btn btn-outline-primary btn-sm">Kamus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
