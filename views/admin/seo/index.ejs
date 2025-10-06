@@ -1,0 +1,118 @@
+<div>
+    <h1 class="h3 mb-4">SEO Settings</h1>
+    
+    <% if (success) { %>
+        <div class="alert alert-success">SEO settings have been saved successfully.</div>
+    <% } %>
+    
+    <% if (error) { %>
+        <div class="alert alert-danger">An error occurred while saving SEO settings.</div>
+    <% } %>
+
+    <form action="/admin/seo" method="POST">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5>Site Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Site Title</label>
+                            <input type="text" class="form-control" name="siteTitle" value="<%= seoData.site?.title || '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Site Description</label>
+                            <textarea class="form-control" name="siteDescription" rows="3"><%= seoData.site?.description || '' %></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Keywords</label>
+                            <input type="text" class="form-control" name="siteKeywords" value="<%= seoData.site?.keywords || '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Site URL</label>
+                            <input type="url" class="form-control" name="siteUrl" value="<%= seoData.site?.url || '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Social Image (OG/Twitter)</label>
+                            <input type="url" class="form-control" name="siteImage" value="<%= seoData.site?.image || '' %>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5>Home Page</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Page Title</label>
+                            <input type="text" class="form-control" name="homeTitle" value="<%= seoData.pages?.home?.title || '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" name="homeDescription" rows="3"><%= seoData.pages?.home?.description || '' %></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Keywords</label>
+                            <input type="text" class="form-control" name="homeKeywords" value="<%= seoData.pages?.home?.keywords || '' %>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5>Search Page</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Page Title</label>
+                            <input type="text" class="form-control" name="searchTitle" value="<%= seoData.pages?.search?.title || '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" name="searchDescription" rows="3"><%= seoData.pages?.search?.description || '' %></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Keywords</label>
+                            <input type="text" class="form-control" name="searchKeywords" value="<%= seoData.pages?.search?.keywords || '' %>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5>About Page</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Page Title</label>
+                            <input type="text" class="form-control" name="aboutTitle" value="<%= seoData.pages?.about?.title || '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" name="aboutDescription" rows="3"><%= seoData.pages?.about?.description || '' %></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Keywords</label>
+                            <input type="text" class="form-control" name="aboutKeywords" value="<%= seoData.pages?.about?.keywords || '' %>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-between">
+            <a href="/admin" class="btn btn-outline-secondary">Back to Dashboard</a>
+            <button type="submit" class="btn btn-primary">Save SEO Settings</button>
+        </div>
+    </form>
+</div>

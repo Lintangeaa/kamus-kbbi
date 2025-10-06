@@ -1,0 +1,49 @@
+<div>
+    <h1 class="h3 mb-4">Edit Iklan</h1>
+    <form action="/admin/ads/<%= ad.id %>" method="POST" enctype="multipart/form-data" class="row g-3">
+        <div class="col-md-6">
+            <label class="form-label">Nama</label>
+            <input type="text" name="name" class="form-control" value="<%= ad.name %>" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Link (opsional)</label>
+            <input type="url" name="linkUrl" class="form-control" value="<%= ad.linkUrl %>" placeholder="https://">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Posisi</label>
+            <select name="position" class="form-select">
+                <option value="banner" <%= ad.position === 'banner' ? 'selected' : '' %>>Banner (728x90)</option>
+                <option value="sidebar" <%= ad.position === 'sidebar' ? 'selected' : '' %>>Sidebar (300x250)</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Foto (gambar)</label>
+            <input type="file" name="image" accept="image/*" class="form-control">
+            <% if (ad.imageUrl) { %>
+                <div class="mt-2">
+                    <img src="<%= ad.imageUrl %>" alt="ad" style="height:60px"/>
+                </div>
+            <% } %>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Tanggal Terbit</label>
+            <input type="datetime-local" name="startDate" class="form-control" value="<%= ad.startDate ? new Date(ad.startDate).toISOString().slice(0,16) : '' %>">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Tanggal Berhenti</label>
+            <input type="datetime-local" name="endDate" class="form-control" value="<%= ad.endDate ? new Date(ad.endDate).toISOString().slice(0,16) : '' %>">
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="isPublished" id="isPublished" <%= ad.isPublished ? 'checked' : '' %>>
+                <label class="form-check-label" for="isPublished">Status terbit</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <a href="/admin/ads" class="btn btn-outline-secondary">Batal</a>
+            <button class="btn btn-primary" type="submit">Simpan</button>
+        </div>
+    </form>
+</div>
+
+

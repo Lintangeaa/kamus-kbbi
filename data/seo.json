@@ -1,0 +1,29 @@
+{
+  "site": {
+    "title": "Kamus KBBI Online - Kamus Besar Bahasa Indonesia",
+    "description": "Kamus Besar Bahasa Indonesia (KBBI) online gratis. Cari arti kata, definisi, dan contoh penggunaan kata dalam bahasa Indonesia dengan mudah dan cepat.",
+    "keywords": "kamus, kbbi, bahasa indonesia, kamus online, definisi kata, arti kata, kamus besar bahasa indonesia",
+    "author": "Soulcode",
+    "url": "https://kamus-kbbi.com",
+    "image": "/images/og-image.jpg",
+    "twitter": "@soulcode",
+    "facebook": "soulcode"
+  },
+  "pages": {
+    "home": {
+      "title": "Kamus KBBI Online - Kamus Besar Bahasa Indonesia Gratis",
+      "description": "Kamus Besar Bahasa Indonesia online gratis. Cari arti kata, definisi, dan contoh penggunaan kata dalam bahasa Indonesia dengan mudah dan cepat.",
+      "keywords": "kamus kbbi, kamus online, bahasa indonesia, definisi kata, arti kata"
+    },
+    "search": {
+      "title": "Pencarian Kata - Kamus KBBI Online",
+      "description": "Cari arti kata dalam Kamus Besar Bahasa Indonesia. Temukan definisi, makna, dan contoh penggunaan kata bahasa Indonesia.",
+      "keywords": "pencarian kata, cari arti kata, definisi kata, kamus kbbi"
+    },
+    "about": {
+      "title": "Tentang Kamus KBBI - Kamus Besar Bahasa Indonesia Online",
+      "description": "Pelajari lebih lanjut tentang Kamus KBBI online, fitur-fitur yang tersedia, dan cara menggunakan kamus bahasa Indonesia ini.",
+      "keywords": "tentang kbbi, kamus online, fitur kamus, cara menggunakan kbbi"
+    }
+  }
+}

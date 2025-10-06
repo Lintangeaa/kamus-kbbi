@@ -1,0 +1,57 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 mb-0">Kelola Iklan</h1>
+    <a href="/admin/ads/new" class="btn btn-primary"><i class="fas fa-plus me-2"></i>Tambah Iklan</a>
+</div>
+
+    <div class="table-responsive">
+        <table class="table table-striped align-middle">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Foto</th>
+                    <th>Posisi</th>
+                    <th>Tanggal Terbit</th>
+                    <th>Tanggal Berhenti</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (ads && ads.length) { %>
+                    <% ads.forEach(function(a){ %>
+                        <tr>
+                            <td><%= a.name %></td>
+                            <td>
+                                <% if (a.imageUrl) { %>
+                                    <img src="<%= a.imageUrl %>" alt="ad" style="height:40px"/>
+                                <% } else { %>
+                                    <span class="text-muted">-</span>
+                                <% } %>
+                            </td>
+                            <td><span class="badge bg-secondary"><%= a.position %></span></td>
+                            <td><%= a.startDate ? new Date(a.startDate).toLocaleString('id-ID') : '-' %></td>
+                            <td><%= a.endDate ? new Date(a.endDate).toLocaleString('id-ID') : '-' %></td>
+                            <td>
+                                <% if (a.isPublished) { %>
+                                    <span class="badge bg-success">Terbit</span>
+                                <% } else { %>
+                                    <span class="badge bg-secondary">Draft</span>
+                                <% } %>
+                            </td>
+                            <td>
+                                <a href="/admin/ads/<%= a.id %>/edit" class="btn btn-sm btn-outline-primary">Edit</a>
+                                <form action="/admin/ads/<%= a.id %>/delete" method="POST" class="d-inline" onsubmit="return confirm('Hapus iklan ini?')">
+                                    <button class="btn btn-sm btn-outline-danger" type="submit">Hapus</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                <% } else { %>
+                    <tr><td colspan="7" class="text-center text-muted">Belum ada iklan</td></tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

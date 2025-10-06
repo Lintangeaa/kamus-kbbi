@@ -72,35 +72,29 @@
                 <!-- AdSense Sidebar Banner -->
                 <div class="card mb-3">
                     <div class="card-body text-center p-2">
-                        <div class="adsense-sidebar" style="
-                            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
-                            border: 2px dashed #dee2e6;
-                            border-radius: 8px;
-                            padding: 30px 15px;
-                            color: #6c757d;
-                            font-size: 12px;
-                            min-height: 250px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            flex-direction: column;
-                        ">
-                            <i class="fas fa-ad fa-lg mb-2"></i>
-                            <div>AdSense Banner</div>
-                            <small>300x250 Medium Rectangle</small>
-                            <!-- 
-                            Ganti div ini dengan kode AdSense Anda:
-                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <ins class="adsbygoogle"
-                                 style="display:block"
-                                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                                 data-ad-slot="XXXXXXXXXX"
-                                 data-ad-format="rectangle"></ins>
-                            <script>
-                                 (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                            -->
-                        </div>
+                        <% if (adsSidebar) { %>
+                            <a href="<%= adsSidebar.linkUrl || '#' %>" target="_blank" rel="noopener" class="d-inline-block w-100">
+                                <img src="<%= adsSidebar.imageUrl %>" alt="sidebar ad" class="img-fluid" style="max-width:100%; height:auto; max-height:250px; object-fit:cover;"/>
+                            </a>
+                        <% } else { %>
+                            <div class="adsense-sidebar" style="
+                                background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+                                border: 2px dashed #dee2e6;
+                                border-radius: 8px;
+                                padding: 30px 15px;
+                                color: #6c757d;
+                                font-size: 12px;
+                                min-height: 250px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-direction: column;
+                            ">
+                                <i class="fas fa-ad fa-lg mb-2"></i>
+                                <div>AdSense Banner</div>
+                                <small>300x250 Medium Rectangle</small>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
 

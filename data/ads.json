@@ -1,0 +1,14 @@
+[
+  {
+    "id": "742e1f9b-b778-491d-a84c-a1a66d34d980",
+    "name": "Test Iklan",
+    "imageUrl": "/uploads/ads/98b5ca2d-8440-4b09-98a1-154e1d15385c.jpg",
+    "linkUrl": "",
+    "position": "banner",
+    "startDate": "2025-10-05T21:34",
+    "endDate": "2025-10-30T21:35",
+    "isPublished": true,
+    "createdAt": "2025-10-06T14:35:04.419Z",
+    "updatedAt": "2025-10-06T14:35:04.419Z"
+  }
+]

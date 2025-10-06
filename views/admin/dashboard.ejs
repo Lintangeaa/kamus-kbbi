@@ -1,0 +1,105 @@
+<div>
+    <h1 class="h3 mb-4">Dashboard</h1>
+    <div class="row g-3">
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-1">Total Ads</h6>
+                            <div class="fs-3 fw-bold"><%= typeof totalAds !== 'undefined' ? totalAds : 0 %></div>
+                        </div>
+                        <div class="text-primary">
+                            <i class="fas fa-bullhorn fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-1">Active Ads</h6>
+                            <div class="fs-3 fw-bold"><%= typeof activeAdsCount !== 'undefined' ? activeAdsCount : 0 %></div>
+                        </div>
+                        <div class="text-success">
+                            <i class="fas fa-check-circle fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-1">Scheduled</h6>
+                            <div class="fs-3 fw-bold"><%= typeof scheduledAdsCount !== 'undefined' ? scheduledAdsCount : 0 %></div>
+                        </div>
+                        <div class="text-warning">
+                            <i class="fas fa-clock fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-1">Draft</h6>
+                            <div class="fs-3 fw-bold"><%= typeof draftAdsCount !== 'undefined' ? draftAdsCount : 0 %></div>
+                        </div>
+                        <div class="text-secondary">
+                            <i class="fas fa-pencil-alt fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-3 mt-3">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Quick Actions</h5>
+                        <a href="/admin/ads/new" class="btn btn-sm btn-primary">
+                            <i class="fas fa-plus me-1"></i> New Ad
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="/admin/ads" class="text-decoration-none"><i class="fas fa-bullhorn me-2"></i>Manage Ads</a></li>
+                        <li class="list-group-item"><a href="/admin/seo" class="text-decoration-none"><i class="fas fa-search me-2"></i>SEO Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Tips</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="mb-0">
+                        <li>Use descriptive names and correct sizes for ads.</li>
+                        <li>Schedule publish/stop dates to automate campaigns.</li>
+                        <li>Keep SEO metadata concise and relevant.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

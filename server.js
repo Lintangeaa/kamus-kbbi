@@ -2,6 +2,15 @@ const express = require('express');
 const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
 const fs = require('fs');
+// Ads management
+const adminAdsRoutes = require('./src/routes/admin/adminAdsRoutes');
+const { getActiveAds } = require('./src/models/adsModel');
+const session = require('express-session');
+const publicRoutes = require('./src/routes/publicRoutes');
+const adminAuthRoutes = require('./src/routes/adminAuthRoutes');
+const adminRoutes = require('./src/routes/admin/adminRoutes');
+const { requireAdmin } = require('./src/middleware/auth');
+const { setAdminLayout } = require('./src/middleware/adminLayout');
 
 // Load KBBI data
 const kbbiData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'kbbi.json'), 'utf8'));
@@ -23,63 +32,43 @@ app.set('layout extractStyles', true);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'kbbi-secret',
+  resave: false,
+  saveUninitialized: false
+}));
 
-// Routes
-app.get('/', (req, res) => {
-  res.render('index', { 
-    title: 'Kamus KBBI',
-    subtitle: 'Kamus Besar Bahasa Indonesia'
-  });
-});
-
-app.get('/search', (req, res) => {
-  const query = req.query.q;
-  if (!query) {
-    return res.render('search', { 
-      title: 'Pencarian KBBI',
-      query: '',
-      results: [],
-      message: 'Masukkan kata yang ingin dicari'
-    });
+// Expose active ads to public views only
+app.use((req, res, next) => {
+  // Skip ads for admin routes
+  if (req.path.startsWith('/admin')) {
+    res.locals.adsBanner = null;
+    res.locals.adsSidebar = null;
+    return next();
   }
-
-  // Search in KBBI data
-  const searchResults = [];
-  const searchTerm = query.toLowerCase().trim();
   
-  if (kbbiData.kata[searchTerm]) {
-    const wordData = kbbiData.kata[searchTerm];
-    searchResults.push({
-      word: searchTerm,
-      definition: wordData.definisi,
-      examples: wordData.contoh || []
-    });
-  } else {
-    // Try partial matching
-    for (const [word, data] of Object.entries(kbbiData.kata)) {
-      if (word.includes(searchTerm) || searchTerm.includes(word)) {
-        searchResults.push({
-          word: word,
-          definition: data.definisi,
-          examples: data.contoh || []
-        });
-      }
-    }
+  try {
+    const activeAds = getActiveAds();
+    const bannerAd = activeAds.find(a => a.position === 'banner');
+    const sidebarAd = activeAds.find(a => a.position === 'sidebar');
+    res.locals.adsBanner = bannerAd || null;
+    res.locals.adsSidebar = sidebarAd || null;
+  } catch (e) {
+    res.locals.adsBanner = null;
+    res.locals.adsSidebar = null;
   }
-
-  res.render('search', { 
-    title: 'Hasil Pencarian',
-    query: query,
-    results: searchResults,
-    message: searchResults.length === 0 ? `Kata "${query}" tidak ditemukan dalam kamus` : null
-  });
+  next();
 });
 
-app.get('/about', (req, res) => {
-  res.render('about', { 
-    title: 'Tentang KBBI'
-  });
-});
+// Public routes
+app.use('/', publicRoutes);
+
+// Admin auth (no admin layout here)
+app.use('/admin', adminAuthRoutes);
+
+// Admin protected routes with admin layout
+app.use('/admin', requireAdmin, setAdminLayout, adminRoutes);
+// (Public handlers moved to publicRoutes)
 
 // 404 handler
 app.use((req, res) => {
