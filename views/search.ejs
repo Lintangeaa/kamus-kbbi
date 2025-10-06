@@ -2,13 +2,15 @@
 <div class="search-results">
     <div class="row">
         <div class="col-md-8">
-            <h2 class="mb-4">
-                <% if (query) { %>
-                    Hasil Pencarian: "<%= query %>"
-                <% } else { %>
-                    Pencarian Kata
-                <% } %>
-            </h2>
+            <header>
+                <h1 class="mb-4">
+                    <% if (query) { %>
+                        Hasil Pencarian: "<%= query %>"
+                    <% } else { %>
+                        Pencarian Kata
+                    <% } %>
+                </h1>
+            </header>
 
             <!-- Search Form -->
             <form action="/search" method="GET" class="mb-4">
@@ -16,7 +18,7 @@
                     <input type="text" class="form-control" name="q" 
                            placeholder="Masukkan kata yang ingin dicari..." 
                            value="<%= query %>" required>
-                    <button class="btn btn-primary" type="submit">
+                    <button class="btn btn-primary" type="submit" aria-label="Cari kata">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
@@ -29,34 +31,60 @@
             <% } %>
 
             <% if (results && results.length > 0) { %>
+                <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "Hasil Pencarian KBBI",
+                    "description": "Daftar kata dan definisi dari Kamus Besar Bahasa Indonesia",
+                    "numberOfItems": <%= results.length %>,
+                    "itemListElement": [
+                        <% results.forEach(function(result, index) { %>
+                        {
+                            "@type": "ListItem",
+                            "position": <%= index + 1 %>,
+                            "item": {
+                                "@type": "DefinedTerm",
+                                "name": "<%= result.word %>",
+                                "description": "<%= result.definition %>",
+                                "inDefinedTermSet": {
+                                    "@type": "DefinedTermSet",
+                                    "name": "Kamus Besar Bahasa Indonesia"
+                                }
+                            }
+                        }<%= index < results.length - 1 ? ',' : '' %>
+                        <% }); %>
+                    ]
+                }
+                </script>
                 <% results.forEach(function(result) { %>
-                    <div class="card mb-4">
+                    <article class="card mb-4" itemscope itemtype="https://schema.org/DefinedTerm">
                         <div class="card-header bg-primary text-white">
-                            <h4 class="mb-0">
-                                <i class="fas fa-book me-2"></i><%= result.word %>
-                            </h4>
+                            <h2 class="mb-0">
+                                <i class="fas fa-book me-2"></i><span itemprop="name"><%= result.word %></span>
+                            </h2>
                         </div>
                         <div class="card-body">
                             <div class="definition mb-3">
-                                <h6 class="text-muted">Definisi:</h6>
-                                <p class="mb-0"><%= result.definition %></p>
+                                <h3 class="text-muted h6">Definisi:</h3>
+                                <p class="mb-0" itemprop="description"><%= result.definition %></p>
                             </div>
                             
                             <% if (result.examples && result.examples.length > 0) { %>
                                 <div class="examples">
-                                    <h6 class="text-muted">Contoh Penggunaan:</h6>
+                                    <h3 class="text-muted h6">Contoh Penggunaan:</h3>
                                     <ul class="list-unstyled">
                                         <% result.examples.forEach(function(example) { %>
                                             <li class="mb-2">
                                                 <i class="fas fa-quote-left text-muted me-2"></i>
-                                                <%= example %>
+                                                <span itemprop="exampleOfWork"><%= example %></span>
                                             </li>
                                         <% }); %>
                                     </ul>
                                 </div>
                             <% } %>
                         </div>
-                    </div>
+                    </article>
                 <% }); %>
             <% } else if (query) { %>
                 <div class="alert alert-warning">
@@ -103,7 +131,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h5><i class="fas fa-lightbulb me-2"></i>Tips Pencarian</h5>
+                        <h4><i class="fas fa-lightbulb me-2"></i>Tips Pencarian</h4>
                     </div>
                     <div class="card-body">
                         <ul class="list-unstyled">
@@ -125,7 +153,7 @@
 
                 <div class="card mt-3">
                     <div class="card-header">
-                        <h5><i class="fas fa-fire me-2"></i>Kata Populer</h5>
+                        <h4><i class="fas fa-fire me-2"></i>Kata Populer</h4>
                     </div>
                     <div class="card-body">
                         <div class="d-grid gap-2">

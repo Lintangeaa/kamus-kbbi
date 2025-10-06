@@ -78,6 +78,20 @@ ${urls.map(url => `  <url>
 function robots(req, res) {
     const robots = `User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /uploads/
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /uploads/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /uploads/
 
 Sitemap: ${req.protocol}://${req.get('host')}/sitemap.xml`;
     
