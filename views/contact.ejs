@@ -1,0 +1,256 @@
+<div class="contact-page">
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class="mb-4">
+                <i class="fas fa-envelope me-2"></i>Hubungi Kami
+            </h1>
+            
+            <div class="content">
+                <p class="lead">
+                    Kami senang mendengar dari Anda! Jika Anda memiliki pertanyaan, saran, atau memerlukan bantuan, jangan ragu untuk menghubungi kami.
+                </p>
+
+                <!-- Contact Form -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4><i class="fas fa-paper-plane me-2"></i>Kirim Pesan</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="contactForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Nama Lengkap *</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                    <div class="invalid-feedback">
+                                        Mohon masukkan nama lengkap Anda.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                    <div class="invalid-feedback">
+                                        Mohon masukkan alamat email yang valid.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subjek *</label>
+                                <select class="form-select" id="subject" name="subject" required>
+                                    <option value="">Pilih subjek...</option>
+                                    <option value="general">Pertanyaan Umum</option>
+                                    <option value="bug">Laporan Bug</option>
+                                    <option value="suggestion">Saran Perbaikan</option>
+                                    <option value="content">Koreksi Konten</option>
+                                    <option value="technical">Masalah Teknis</option>
+                                    <option value="partnership">Kemitraan</option>
+                                    <option value="other">Lainnya</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Mohon pilih subjek pesan.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Pesan *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required 
+                                          placeholder="Tuliskan pesan Anda di sini..."></textarea>
+                                <div class="invalid-feedback">
+                                    Mohon tuliskan pesan Anda.
+                                </div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="consent" name="consent" required>
+                                <label class="form-check-label" for="consent">
+                                    Saya setuju untuk berbagi informasi ini dengan tim Kamus KBBI untuk keperluan penanganan pertanyaan saya. *
+                                </label>
+                                <div class="invalid-feedback">
+                                    Anda harus menyetujui untuk melanjutkan.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane me-2"></i>Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-address-book me-2"></i>Informasi Kontak</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-envelope text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6>Email</h6>
+                                        <p class="mb-0">info@kamus-kbbi.com</p>
+                                        <small class="text-muted">Pertanyaan umum dan dukungan</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-phone text-success me-3 mt-1"></i>
+                                    <div>
+                                        <h6>Telepon</h6>
+                                        <p class="mb-0">+62 21 1234 5678</p>
+                                        <small class="text-muted">Senin - Jumat, 09:00 - 17:00 WIB</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-map-marker-alt text-danger me-3 mt-1"></i>
+                                    <div>
+                                        <h6>Alamat</h6>
+                                        <p class="mb-0">
+                                            Jl. Contoh No. 123<br>
+                                            Jakarta Pusat 10110<br>
+                                            Indonesia
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-clock text-warning me-3 mt-1"></i>
+                                    <div>
+                                        <h6>Jam Operasional</h6>
+                                        <p class="mb-0">
+                                            Senin - Jumat: 09:00 - 17:00<br>
+                                            Sabtu: 09:00 - 13:00<br>
+                                            Minggu: Tutup
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="sidebar">
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-question-circle me-2"></i>Pertanyaan Umum</h4>
+                    </div>
+                    <div class="card-body">
+                        <h6>Bagaimana cara melaporkan bug?</h6>
+                        <p class="small">Gunakan form kontak dengan subjek "Laporan Bug" dan jelaskan masalah yang Anda alami secara detail.</p>
+                        
+                        <h6>Berapa lama waktu respons?</h6>
+                        <p class="small">Kami biasanya merespons dalam 1-2 hari kerja untuk pertanyaan umum dan 3-5 hari untuk masalah teknis.</p>
+                        
+                        <h6>Bolehkah saya memberikan saran fitur baru?</h6>
+                        <p class="small">Tentu! Kami sangat menghargai saran dan umpan balik untuk meningkatkan layanan kami.</p>
+                        
+                        <h6>Bagaimana cara melaporkan konten yang salah?</h6>
+                        <p class="small">Pilih subjek "Koreksi Konten" dan sertakan kata yang bermasalah beserta definisi yang benar.</p>
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h4><i class="fas fa-share-alt me-2"></i>Media Sosial</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="small mb-3">Ikuti kami di media sosial untuk update terbaru:</p>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fab fa-facebook me-2"></i>Facebook
+                            </a>
+                            <a href="#" class="btn btn-outline-info btn-sm">
+                                <i class="fab fa-twitter me-2"></i>Twitter
+                            </a>
+                            <a href="#" class="btn btn-outline-danger btn-sm">
+                                <i class="fab fa-instagram me-2"></i>Instagram
+                            </a>
+                            <a href="#" class="btn btn-outline-dark btn-sm">
+                                <i class="fab fa-youtube me-2"></i>YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h4><i class="fas fa-info-circle me-2"></i>Informasi Lainnya</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="/about" class="text-decoration-none">
+                                    <i class="fas fa-info-circle me-2"></i>Tentang Kami
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="/privacy" class="text-decoration-none">
+                                    <i class="fas fa-shield-alt me-2"></i>Kebijakan Privasi
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="/terms" class="text-decoration-none">
+                                    <i class="fas fa-file-contract me-2"></i>Syarat dan Ketentuan
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Form validation and submission
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form elements
+    const form = this;
+    const formData = new FormData(form);
+    
+    // Validate form
+    if (form.checkValidity() === false) {
+        e.stopPropagation();
+        form.classList.add('was-validated');
+        return;
+    }
+    
+    // Show loading state
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Mengirim...';
+    submitBtn.disabled = true;
+    
+    // Simulate form submission (replace with actual API call)
+    setTimeout(() => {
+        // Show success message
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'alert alert-success alert-dismissible fade show';
+        alertDiv.innerHTML = `
+            <i class="fas fa-check-circle me-2"></i>
+            <strong>Terima kasih!</strong> Pesan Anda telah berhasil dikirim. Kami akan merespons dalam 1-2 hari kerja.
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+        
+        form.parentNode.insertBefore(alertDiv, form);
+        
+        // Reset form
+        form.reset();
+        form.classList.remove('was-validated');
+        
+        // Reset button
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        
+        // Scroll to top of form
+        form.scrollIntoView({ behavior: 'smooth' });
+        
+    }, 2000);
+});
+</script>

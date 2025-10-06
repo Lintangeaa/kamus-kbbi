@@ -87,6 +87,96 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1 !important;
 }
 
+/* Privacy, Terms, and Contact Pages */
+.privacy-page,
+.terms-page,
+.contact-page {
+    line-height: 1.8;
+}
+
+.privacy-page h3,
+.terms-page h3,
+.contact-page h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--light-color);
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.privacy-page h3:first-child,
+.terms-page h3:first-child,
+.contact-page h3:first-child {
+    margin-top: 0;
+}
+
+/* Contact Form Styles */
+.contact-page .form-control,
+.contact-page .form-select {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.contact-page .form-control:focus,
+.contact-page .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.contact-page .btn-primary {
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Legal Pages Sidebar */
+.privacy-page .sidebar .card,
+.terms-page .sidebar .card,
+.contact-page .sidebar .card {
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Alert Styles for Legal Pages */
+.alert-info {
+    background: linear-gradient(45deg, #d1ecf1, #bee5eb);
+    border: none;
+    border-radius: 8px;
+}
+
+.alert-warning {
+    background: linear-gradient(45deg, #fff3cd, #ffeaa7);
+    border: none;
+    border-radius: 8px;
+}
+
+/* Navigation Dropdown */
+.navbar-nav .dropdown-menu {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .dropdown-item {
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Footer Links */
+footer .text-light:hover {
+    color: #fff !important;
+    text-decoration: underline !important;
+}
+
+footer .text-light {
+    transition: all 0.3s ease;
+}
+
 /* Hero Section */
 .hero-section {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);

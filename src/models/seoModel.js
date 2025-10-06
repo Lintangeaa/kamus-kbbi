@@ -75,6 +75,24 @@ function generateSitemap() {
             priority: '0.9'
         },
         {
+            loc: `${baseUrl}/privacy`,
+            lastmod: new Date().toISOString().split('T')[0],
+            changefreq: 'monthly',
+            priority: '0.7'
+        },
+        {
+            loc: `${baseUrl}/terms`,
+            lastmod: new Date().toISOString().split('T')[0],
+            changefreq: 'monthly',
+            priority: '0.7'
+        },
+        {
+            loc: `${baseUrl}/contact`,
+            lastmod: new Date().toISOString().split('T')[0],
+            changefreq: 'monthly',
+            priority: '0.7'
+        },
+        {
             loc: `${baseUrl}/about`,
             lastmod: new Date().toISOString().split('T')[0],
             changefreq: 'monthly',

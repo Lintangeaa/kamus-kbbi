@@ -82,6 +82,42 @@ router.get('/about', (req, res) => {
   });
 });
 
+router.get('/privacy', (req, res) => {
+  const seoData = getPageSeo('privacy', {
+    title: 'Kebijakan Privasi - Kamus KBBI',
+    description: 'Kebijakan privasi Kamus KBBI Online. Pelajari bagaimana kami melindungi dan menggunakan informasi pribadi Anda.',
+    keywords: 'kebijakan privasi, perlindungan data, privasi pengguna, kamus kbbi'
+  });
+  res.render('privacy', { 
+    title: 'Kebijakan Privasi',
+    seoData
+  });
+});
+
+router.get('/terms', (req, res) => {
+  const seoData = getPageSeo('terms', {
+    title: 'Syarat dan Ketentuan - Kamus KBBI',
+    description: 'Syarat dan ketentuan penggunaan Kamus KBBI Online. Baca aturan dan ketentuan sebelum menggunakan layanan kami.',
+    keywords: 'syarat ketentuan, terms of use, aturan penggunaan, kamus kbbi'
+  });
+  res.render('terms', { 
+    title: 'Syarat dan Ketentuan',
+    seoData
+  });
+});
+
+router.get('/contact', (req, res) => {
+  const seoData = getPageSeo('contact', {
+    title: 'Hubungi Kami - Kamus KBBI',
+    description: 'Hubungi tim Kamus KBBI untuk pertanyaan, saran, atau bantuan teknis. Kami siap membantu Anda.',
+    keywords: 'hubungi kami, kontak, customer service, bantuan, kamus kbbi'
+  });
+  res.render('contact', { 
+    title: 'Hubungi Kami',
+    seoData
+  });
+});
+
 module.exports = router;
 
 

@@ -13,9 +13,6 @@ const { requireAdmin } = require('./src/middleware/auth');
 const { setAdminLayout } = require('./src/middleware/adminLayout');
 const { textCompression } = require('./src/middleware/compression');
 
-// Load KBBI data
-const kbbiData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'kbbi.json'), 'utf8'));
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 const NODE_ENV = process.env.NODE_ENV || 'development';

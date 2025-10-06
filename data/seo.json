@@ -24,6 +24,21 @@
       "title": "Tentang Kamus KBBI - Kamus Besar Bahasa Indonesia Online",
       "description": "Pelajari lebih lanjut tentang Kamus KBBI online, fitur-fitur yang tersedia, dan cara menggunakan kamus bahasa Indonesia ini.",
       "keywords": "tentang kbbi, kamus online, fitur kamus, cara menggunakan kbbi"
+    },
+    "privacy": {
+      "title": "Kebijakan Privasi - Kamus KBBI Online",
+      "description": "Kebijakan privasi Kamus KBBI Online. Pelajari bagaimana kami melindungi dan menggunakan informasi pribadi Anda dengan aman.",
+      "keywords": "kebijakan privasi, perlindungan data, privasi pengguna, keamanan data, kamus kbbi"
+    },
+    "terms": {
+      "title": "Syarat dan Ketentuan - Kamus KBBI Online",
+      "description": "Syarat dan ketentuan penggunaan Kamus KBBI Online. Baca aturan dan ketentuan sebelum menggunakan layanan kamus bahasa Indonesia ini.",
+      "keywords": "syarat ketentuan, terms of use, aturan penggunaan, ketentuan layanan, kamus kbbi"
+    },
+    "contact": {
+      "title": "Hubungi Kami - Kamus KBBI Online",
+      "description": "Hubungi tim Kamus KBBI untuk pertanyaan, saran, atau bantuan teknis. Kami siap membantu Anda dengan layanan kamus bahasa Indonesia.",
+      "keywords": "hubungi kami, kontak, customer service, bantuan teknis, kamus kbbi"
     }
   }
 }
