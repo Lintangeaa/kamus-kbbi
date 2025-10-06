@@ -55,6 +55,30 @@ body {
     border: none;
 }
 
+/* Prevent layout shift with reserved space */
+.adsense-banner {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.adsense-sidebar {
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Optimize animations - use transform instead of changing layout properties */
+.card {
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
 /* Critical responsive */
 @media (max-width: 768px) {
     .hero-section {

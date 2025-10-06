@@ -1,15 +1,16 @@
 /* Non-critical CSS - Loaded asynchronously */
 
-/* Cards and animations */
+/* Cards and animations - Optimized for compositing */
 .card {
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+    transition: transform 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Features Section */
@@ -92,17 +93,18 @@ footer {
     to { transform: rotate(360deg); }
 }
 
-/* Custom Button Styles */
+/* Custom Button Styles - Optimized animations */
 .btn-primary {
     background: linear-gradient(45deg, #007bff, #0056b3);
     border: none;
-    transition: all 0.3s ease;
+    will-change: transform;
+    transition: transform 0.2s ease;
 }
 
 .btn-primary:hover {
     background: linear-gradient(45deg, #0056b3, #004085);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
 }
 
 /* Alert Styles */

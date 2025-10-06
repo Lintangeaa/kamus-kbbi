@@ -21,7 +21,7 @@
             <input type="file" name="image" accept="image/*" class="form-control">
             <% if (ad.imageUrl) { %>
                 <div class="mt-2">
-                    <img src="<%= ad.imageUrl %>" alt="ad" style="height:60px" loading="lazy" class="img-fluid"/>
+                    <img src="<%= ad.imageUrl %>" alt="ad" width="80" height="60" style="height:60px; width:auto;" class="img-fluid"/>
                 </div>
             <% } %>
         </div>

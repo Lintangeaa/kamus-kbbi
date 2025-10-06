@@ -11,6 +11,7 @@ const adminAuthRoutes = require('./src/routes/adminAuthRoutes');
 const adminRoutes = require('./src/routes/admin/adminRoutes');
 const { requireAdmin } = require('./src/middleware/auth');
 const { setAdminLayout } = require('./src/middleware/adminLayout');
+const { textCompression } = require('./src/middleware/compression');
 
 // Load KBBI data
 const kbbiData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'kbbi.json'), 'utf8'));
@@ -29,6 +30,7 @@ app.set('layout extractScripts', true);
 app.set('layout extractStyles', true);
 
 // Middleware
+app.use(textCompression()); // Enable text compression
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

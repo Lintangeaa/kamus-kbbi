@@ -74,7 +74,7 @@
                     <div class="card-body text-center p-2">
                         <% if (adsSidebar) { %>
                             <a href="<%= adsSidebar.linkUrl || '#' %>" target="_blank" rel="noopener" class="d-inline-block w-100">
-                                <img src="<%= adsSidebar.imageUrl %>" alt="sidebar ad" class="img-fluid" style="max-width:100%; height:auto; max-height:250px; object-fit:cover;" loading="lazy"/>
+                                <img src="<%= adsSidebar.imageUrl %>" alt="sidebar ad" class="img-fluid" width="300" height="250" style="max-width:100%; height:auto; max-height:250px; object-fit:cover;"/>
                             </a>
                         <% } else { %>
                             <div class="adsense-sidebar" style="
