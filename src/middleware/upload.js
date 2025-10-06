@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const multer = require('multer');
+const sharp = require('sharp');
 const { v4: uuidv4 } = require('uuid');
 
 const uploadDir = path.join(__dirname, '../../public/uploads/ads');
@@ -13,8 +14,8 @@ const storage = multer.diskStorage({
         cb(null, uploadDir);
     },
     filename: function (req, file, cb) {
-        const ext = path.extname(file.originalname).toLowerCase();
-        cb(null, `${uuidv4()}${ext}`);
+        // Always save as WebP
+        cb(null, `${uuidv4()}.webp`);
     }
 });
 
@@ -30,9 +31,51 @@ function fileFilter(req, file, cb) {
 
 const upload = multer({ storage, fileFilter });
 
-// Helper to build responsive srcset for uploaded images (assumes ads sizes)
+// Process uploaded image to WebP with optimization
+async function processImage(file, position) {
+    const inputPath = file.path;
+    const tempPath = inputPath.replace('.webp', '_temp.webp');
+    
+    try {
+        let sharpInstance = sharp(inputPath);
+        
+        // Resize based on position
+        if (position === 'banner') {
+            sharpInstance = sharpInstance.resize(728, 90, { 
+                fit: 'cover',
+                position: 'center'
+            });
+        } else if (position === 'sidebar') {
+            sharpInstance = sharpInstance.resize(300, 250, { 
+                fit: 'cover',
+                position: 'center'
+            });
+        }
+        
+        // Convert to WebP with optimization to temp file
+        await sharpInstance
+            .webp({ 
+                quality: 85,
+                effort: 6
+            })
+            .toFile(tempPath);
+        
+        // Move temp file to final location
+        fs.renameSync(tempPath, inputPath);
+            
+        return true;
+    } catch (error) {
+        console.error('Error processing image:', error);
+        // Clean up temp file if it exists
+        if (fs.existsSync(tempPath)) {
+            fs.unlinkSync(tempPath);
+        }
+        return false;
+    }
+}
+
+// Helper to build responsive srcset for uploaded images
 function buildAdSrcSet(imageUrl, position) {
-    // For simplicity, reuse the same URL; in production you'd generate variants
     if (position === 'banner') {
         return `${imageUrl} 728w`;
     }
@@ -42,8 +85,6 @@ function buildAdSrcSet(imageUrl, position) {
     return `${imageUrl} 600w`;
 }
 
-module.exports = { upload, buildAdSrcSet };
-
-module.exports = { upload };
+module.exports = { upload, processImage, buildAdSrcSet };
 
 

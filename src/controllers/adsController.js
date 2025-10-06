@@ -1,5 +1,22 @@
 const path = require('path');
+const fs = require('fs');
 const { getAllAds, getAdById, createAd, updateAd, deleteAd } = require('../models/adsModel');
+const { processImage } = require('../middleware/upload');
+
+// Helper function to delete old image file
+function deleteOldImage(imageUrl) {
+    if (imageUrl && imageUrl.startsWith('/uploads/ads/')) {
+        const imagePath = path.join(__dirname, '../../public', imageUrl);
+        if (fs.existsSync(imagePath)) {
+            try {
+                fs.unlinkSync(imagePath);
+                console.log('Deleted old image:', imagePath);
+            } catch (error) {
+                console.error('Error deleting old image:', error);
+            }
+        }
+    }
+}
 
 function parseAdPayload(req) {
     const { name, linkUrl, position, startDate, endDate, isPublished } = req.body;
@@ -45,21 +62,64 @@ function adminEditForm(req, res) {
 }
 
 // Actions
-function adminCreate(req, res) {
+async function adminCreate(req, res) {
     const payload = parseAdPayload(req);
+    
+    // Process image if uploaded
+    if (req.file) {
+        const success = await processImage(req.file, payload.position);
+        if (!success) {
+            return res.status(500).render('error', { 
+                title: 'Error',
+                error: 'Gagal memproses gambar'
+            });
+        }
+    }
+    
     createAd(payload);
     res.redirect('/admin/ads');
 }
 
-function adminUpdate(req, res) {
+async function adminUpdate(req, res) {
+    const adId = req.params.id;
+    const existingAd = getAdById(adId);
+    if (!existingAd) return res.status(404).render('404', { title: 'Halaman Tidak Ditemukan' });
+    
     const payload = parseAdPayload(req);
-    const updated = updateAd(req.params.id, payload);
+    
+    // Process image if uploaded
+    if (req.file) {
+        // Delete old image if exists
+        if (existingAd.imageUrl) {
+            deleteOldImage(existingAd.imageUrl);
+        }
+        
+        const success = await processImage(req.file, payload.position);
+        if (!success) {
+            return res.status(500).render('error', { 
+                title: 'Error',
+                error: 'Gagal memproses gambar'
+            });
+        }
+    }
+    
+    const updated = updateAd(adId, payload);
     if (!updated) return res.status(404).render('404', { title: 'Halaman Tidak Ditemukan' });
     res.redirect('/admin/ads');
 }
 
 function adminDelete(req, res) {
-    deleteAd(req.params.id);
+    const adId = req.params.id;
+    const existingAd = getAdById(adId);
+    
+    if (existingAd) {
+        // Delete associated image file
+        if (existingAd.imageUrl) {
+            deleteOldImage(existingAd.imageUrl);
+        }
+    }
+    
+    deleteAd(adId);
     res.redirect('/admin/ads');
 }
 

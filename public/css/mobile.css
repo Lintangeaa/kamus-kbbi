@@ -1,0 +1,111 @@
+/* Mobile-specific optimizations */
+
+/* Touch-friendly buttons */
+@media (max-width: 768px) {
+    .btn {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 16px;
+    }
+    
+    .btn-sm {
+        min-height: 36px;
+        padding: 8px 12px;
+    }
+    
+    /* Larger touch targets for links */
+    .nav-link {
+        padding: 12px 16px;
+    }
+    
+    /* Optimize form inputs for mobile */
+    .form-control {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 12px 16px;
+    }
+    
+    /* Reduce card shadows on mobile for better performance */
+    .card {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card:hover {
+        transform: none; /* Disable hover effects on mobile */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Optimize hero section for mobile */
+    .hero-section {
+        padding: 2rem 1rem;
+        margin: 0 -15px;
+        border-radius: 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    /* Stack features vertically on mobile */
+    .features-section .col-md-4 {
+        margin-bottom: 1rem;
+    }
+    
+    /* Optimize search form for mobile */
+    .search-form .input-group-lg .form-control {
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+    
+    .search-form .input-group-lg .btn {
+        padding: 12px 20px;
+    }
+    
+    /* Hide sidebar on mobile */
+    .sidebar {
+        display: none;
+    }
+    
+    /* Optimize table for mobile */
+    .table-responsive {
+        font-size: 14px;
+    }
+    
+    /* Reduce padding on mobile */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Optimize ads for mobile */
+    .adsense-banner {
+        min-height: 50px;
+        margin: 10px 0;
+    }
+    
+    .adsense-sidebar {
+        min-height: 200px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.75rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .btn-lg {
+        padding: 10px 16px;
+        font-size: 16px;
+    }
+    
+    /* Stack popular words in single column */
+    .popular-words .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
