@@ -1,6 +1,29 @@
 {
   "kata": {
+    "abjad": {
+      "ejaan": "ab·jad",
+      "kata_dasar": "abjad",
+      "kelas_kata": "n",
+      "definisi": "kumpulan huruf (aksara) berdasarkan urutan yang lazim dalam bahasa tertentu",
+      "contoh": [
+        "Abjad Indonesia terdiri dari 26 huruf",
+        "Anak-anak belajar mengenal abjad sejak usia dini"
+      ]
+    },
+    "akar": {
+      "ejaan": "akar",
+      "kata_dasar": "akar",
+      "kelas_kata": "n",
+      "definisi": "bagian tumbuh-tumbuhan yang masuk ke tanah (atau air) untuk mengisap air dan zat makanan",
+      "contoh": [
+        "Akar pohon beringin sangat kuat dan dalam",
+        "Tanaman membutuhkan akar yang sehat untuk tumbuh subur"
+      ]
+    },
     "bahasa": {
+      "ejaan": "ba·ha·sa",
+      "kata_dasar": "bahasa",
+      "kelas_kata": "n",
       "definisi": "sistem lambang bunyi yang arbitrer, yang digunakan oleh anggota suatu masyarakat untuk bekerja sama, berinteraksi, dan mengidentifikasikan diri",
       "contoh": [
         "Bahasa Indonesia adalah bahasa resmi negara kita",
@@ -8,20 +31,99 @@
       ]
     },
     "belajar": {
-      "definisi": "berusaha memperoleh kepandaian atau ilmu",
+      "ejaan": "be·la·jar",
+      "kata_dasar": "ajar",
+      "kelas_kata": "v",
+      "definisi": "berusaha memperoleh kepandaian atau ilmu; berlatih",
       "contoh": [
         "Siswa belajar matematika di sekolah",
         "Anak-anak belajar membaca dan menulis"
       ]
     },
+    "cinta": {
+      "ejaan": "cin·ta",
+      "kata_dasar": "cinta",
+      "kelas_kata": "n",
+      "definisi": "rasa sangat suka (sayang) kepada; rasa kasih; rasa sayang",
+      "contoh": [
+        "Cinta orang tua kepada anaknya tidak terbatas",
+        "Mereka menikah karena cinta yang tulus"
+      ]
+    },
+    "definisi": {
+      "ejaan": "de·fi·ni·si",
+      "kata_dasar": "definisi",
+      "kelas_kata": "n",
+      "definisi": "pernyataan atau rumusan tentang ruang lingkup dan ciri-ciri suatu konsep yang menjadi pokok pembicaraan dan studi",
+      "contoh": [
+        "Definisi kata 'bahasa' sangat luas dan kompleks",
+        "Dalam kamus, setiap kata memiliki definisi yang jelas"
+      ]
+    },
+    "ejaan": {
+      "ejaan": "eja·an",
+      "kata_dasar": "eja",
+      "kelas_kata": "n",
+      "definisi": "cara menuliskan kata-kata dengan huruf; sistem ejaan",
+      "contoh": [
+        "Ejaan bahasa Indonesia sudah mengalami beberapa perubahan",
+        "Murid-murid diajarkan ejaan yang benar"
+      ]
+    },
+    "fasih": {
+      "ejaan": "fa·sih",
+      "kata_dasar": "fasih",
+      "kelas_kata": "a",
+      "definisi": "terampil dan lancar berbicara; mahir berbahasa",
+      "contoh": [
+        "Dia fasih berbahasa Inggris dan Mandarin",
+        "Orator yang fasih mampu memukau pendengarnya"
+      ]
+    },
+    "gramatika": {
+      "ejaan": "gra·ma·ti·ka",
+      "kata_dasar": "gramatika",
+      "kelas_kata": "n",
+      "definisi": "ilmu tentang struktur bahasa yang meliputi morfologi, sintaksis, dan semantik",
+      "contoh": [
+        "Gramatika bahasa Indonesia cukup kompleks",
+        "Memahami gramatika penting untuk komunikasi yang baik"
+      ]
+    },
+    "huruf": {
+      "ejaan": "hu·ruf",
+      "kata_dasar": "huruf",
+      "kelas_kata": "n",
+      "definisi": "tanda aksara dalam tata tulis yang merupakan anggota abjad yang melambangkan bunyi bahasa",
+      "contoh": [
+        "Huruf kapital digunakan untuk memulai kalimat",
+        "Anak-anak belajar mengenal huruf satu per satu"
+      ]
+    },
     "indonesia": {
+      "ejaan": "In·do·ne·sia",
+      "kata_dasar": "indonesia",
+      "kelas_kata": "n",
       "definisi": "negara di Asia Tenggara yang terletak di antara benua Asia dan Australia",
       "contoh": [
         "Indonesia adalah negara kepulauan terbesar di dunia",
         "Jakarta adalah ibu kota Indonesia"
       ]
     },
+    "jujur": {
+      "ejaan": "ju·jur",
+      "kata_dasar": "jujur",
+      "kelas_kata": "a",
+      "definisi": "lurus hati; tidak berbohong; tidak curang",
+      "contoh": [
+        "Orang yang jujur akan dipercaya oleh banyak orang",
+        "Kejujuran adalah modal utama dalam berbisnis"
+      ]
+    },
     "kamus": {
+      "ejaan": "ka·mus",
+      "kata_dasar": "kamus",
+      "kelas_kata": "n",
       "definisi": "buku acuan yang memuat kata dan ungkapan, biasanya disusun menurut abjad, berikut keterangan tentang makna, pemakaian, atau terjemahannya",
       "contoh": [
         "Kamus KBBI sangat berguna untuk mencari arti kata",
@@ -29,59 +131,73 @@
       ]
     },
     "kata": {
+      "ejaan": "ka·ta",
+      "kata_dasar": "kata",
+      "kelas_kata": "n",
       "definisi": "satuan bahasa yang dapat berdiri sendiri, terjadi dari morfem tunggal (misalnya batu, rumah, datang) atau gabungan morfem (misalnya pejuang, mengikuti, kekuasaan)",
       "contoh": [
         "Setiap kata memiliki arti dan fungsi tertentu",
         "Kata-kata dalam bahasa Indonesia sangat beragam"
       ]
     },
-    "definisi": {
-      "definisi": "pernyataan atau rumusan tentang ruang lingkup dan ciri-ciri suatu konsep yang menjadi pokok pembicaraan dan studi",
+    "lafal": {
+      "ejaan": "la·fal",
+      "kata_dasar": "lafal",
+      "kelas_kata": "n",
+      "definisi": "cara mengucapkan bunyi bahasa; ucapan",
       "contoh": [
-        "Definisi kata 'bahasa' sangat luas dan kompleks",
-        "Dalam kamus, setiap kata memiliki definisi yang jelas"
-      ]
-    },
-    "arti": {
-      "definisi": "makna atau maksud yang terkandung dalam kata, frasa, atau kalimat",
-      "contoh": [
-        "Arti kata 'belajar' adalah berusaha memperoleh ilmu",
-        "Kita perlu memahami arti kata dengan benar"
+        "Lafal bahasa Indonesia yang benar perlu dipelajari",
+        "Guru mengoreksi lafal murid-muridnya"
       ]
     },
     "makna": {
+      "ejaan": "mak·na",
+      "kata_dasar": "makna",
+      "kelas_kata": "n",
       "definisi": "arti atau maksud yang terkandung dalam kata, frasa, atau kalimat",
       "contoh": [
         "Makna kata 'cinta' sangat dalam dan universal",
         "Setiap kata memiliki makna yang berbeda-beda"
       ]
     },
+    "nada": {
+      "ejaan": "na·da",
+      "kata_dasar": "nada",
+      "kelas_kata": "n",
+      "definisi": "tinggi rendahnya bunyi (suara) yang ditentukan oleh frekuensi",
+      "contoh": [
+        "Nada suara penyanyi sangat merdu",
+        "Dalam musik, ada berbagai macam nada"
+      ]
+    },
+    "ortografi": {
+      "ejaan": "or·to·gra·fi",
+      "kata_dasar": "ortografi",
+      "kelas_kata": "n",
+      "definisi": "kaidah penulisan kata-kata dalam bahasa tertentu dengan huruf-huruf menurut sistem yang sudah ditetapkan",
+      "contoh": [
+        "Ortografi bahasa Indonesia mengatur cara penulisan kata",
+        "Pemahaman ortografi penting untuk menulis dengan benar"
+      ]
+    },
+    "pengertian": {
+      "ejaan": "pe·nge·rti·an",
+      "kata_dasar": "erti",
+      "kelas_kata": "n",
+      "definisi": "paham tentang sesuatu; pengetahuan; pemahaman",
+      "contoh": [
+        "Pengertian siswa tentang materi pelajaran sudah baik",
+        "Kita perlu memiliki pengertian yang sama tentang masalah ini"
+      ]
+    },
     "sinonim": {
+      "ejaan": "si·no·nim",
+      "kata_dasar": "sinonim",
+      "kelas_kata": "n",
       "definisi": "kata yang memiliki makna yang sama atau hampir sama dengan kata lain",
       "contoh": [
         "Sinonim kata 'besar' adalah 'agung' atau 'luas'",
         "Kamus sinonim membantu kita memperkaya kosakata"
-      ]
-    },
-    "antonim": {
-      "definisi": "kata yang berlawanan makna dengan kata lain",
-      "contoh": [
-        "Antonim kata 'panas' adalah 'dingin'",
-        "Memahami antonim membantu dalam memahami kontras makna"
-      ]
-    },
-    "tata": {
-      "definisi": "aturan atau sistem yang mengatur cara sesuatu disusun atau diatur",
-      "contoh": [
-        "Tata bahasa Indonesia memiliki aturan yang baku",
-        "Kita harus mematuhi tata tertib yang berlaku"
-      ]
-    },
-    "gramatika": {
-      "definisi": "ilmu tentang struktur bahasa yang meliputi morfologi, sintaksis, dan semantik",
-      "contoh": [
-        "Gramatika bahasa Indonesia cukup kompleks",
-        "Memahami gramatika penting untuk komunikasi yang baik"
       ]
     }
   }

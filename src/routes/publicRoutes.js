@@ -44,6 +44,9 @@ router.get('/search', (req, res) => {
     const wordData = kbbiData.kata[searchTerm];
     searchResults.push({
       word: searchTerm,
+      ejaan: wordData.ejaan,
+      kata_dasar: wordData.kata_dasar,
+      kelas_kata: wordData.kelas_kata,
       definition: wordData.definisi,
       examples: wordData.contoh || []
     });
@@ -52,6 +55,9 @@ router.get('/search', (req, res) => {
       if (word.includes(searchTerm) || searchTerm.includes(word)) {
         searchResults.push({
           word: word,
+          ejaan: data.ejaan,
+          kata_dasar: data.kata_dasar,
+          kelas_kata: data.kelas_kata,
           definition: data.definisi,
           examples: data.contoh || []
         });

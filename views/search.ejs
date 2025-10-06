@@ -47,6 +47,23 @@
                                 "@type": "DefinedTerm",
                                 "name": "<%= result.word %>",
                                 "description": "<%= result.definition %>",
+                                "pronunciation": "<%= result.ejaan || '' %>",
+                                "additionalProperty": [
+                                    <% if (result.kata_dasar) { %>
+                                    {
+                                        "@type": "PropertyValue",
+                                        "name": "kata_dasar",
+                                        "value": "<%= result.kata_dasar %>"
+                                    }<%= result.kelas_kata ? ',' : '' %>
+                                    <% } %>
+                                    <% if (result.kelas_kata) { %>
+                                    {
+                                        "@type": "PropertyValue",
+                                        "name": "kelas_kata",
+                                        "value": "<%= result.kelas_kata %>"
+                                    }
+                                    <% } %>
+                                ],
                                 "inDefinedTermSet": {
                                     "@type": "DefinedTermSet",
                                     "name": "Kamus Besar Bahasa Indonesia"
@@ -65,6 +82,30 @@
                             </h2>
                         </div>
                         <div class="card-body">
+                            <!-- Ejaan, Kata Dasar, dan Kelas Kata -->
+                            <div class="kbbi-info mb-3">
+                                <div class="row">
+                                    <% if (result.ejaan) { %>
+                                    <div class="col-md-4 mb-2">
+                                        <small class="text-muted d-block">Ejaan:</small>
+                                        <div class="kbbi-ejaan"><%= result.ejaan %></div>
+                                    </div>
+                                    <% } %>
+                                    <% if (result.kata_dasar) { %>
+                                    <div class="col-md-4 mb-2">
+                                        <small class="text-muted d-block">Kata Dasar:</small>
+                                        <div class="kbbi-kata-dasar"><%= result.kata_dasar %></div>
+                                    </div>
+                                    <% } %>
+                                    <% if (result.kelas_kata) { %>
+                                    <div class="col-md-4 mb-2">
+                                        <small class="text-muted d-block">Kelas Kata:</small>
+                                        <span class="badge bg-primary kbbi-kelas-kata"><%= result.kelas_kata %></span>
+                                    </div>
+                                    <% } %>
+                                </div>
+                            </div>
+                            
                             <div class="definition mb-3">
                                 <h3 class="text-muted h6">Definisi:</h3>
                                 <p class="mb-0" itemprop="description"><%= result.definition %></p>
@@ -157,10 +198,30 @@
                     </div>
                     <div class="card-body">
                         <div class="d-grid gap-2">
-                            <a href="/search?q=bahasa" class="btn btn-primary btn-sm" aria-label="Cari kata 'bahasa'">Bahasa</a>
-                            <a href="/search?q=belajar" class="btn btn-primary btn-sm" aria-label="Cari kata 'belajar'">Belajar</a>
-                            <a href="/search?q=indonesia" class="btn btn-primary btn-sm" aria-label="Cari kata 'indonesia'">Indonesia</a>
-                            <a href="/search?q=kamus" class="btn btn-primary btn-sm" aria-label="Cari kata 'kamus'">Kamus</a>
+                            <a href="/search?q=bahasa" class="btn btn-primary btn-sm" aria-label="Cari kata 'bahasa'">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>Bahasa</span>
+                                    <small class="opacity-75">ba·ha·sa</small>
+                                </div>
+                            </a>
+                            <a href="/search?q=kamus" class="btn btn-primary btn-sm" aria-label="Cari kata 'kamus'">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>Kamus</span>
+                                    <small class="opacity-75">ka·mus</small>
+                                </div>
+                            </a>
+                            <a href="/search?q=belajar" class="btn btn-primary btn-sm" aria-label="Cari kata 'belajar'">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>Belajar</span>
+                                    <small class="opacity-75">be·la·jar</small>
+                                </div>
+                            </a>
+                            <a href="/search?q=definisi" class="btn btn-primary btn-sm" aria-label="Cari kata 'definisi'">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>Definisi</span>
+                                    <small class="opacity-75">de·fi·ni·si</small>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>

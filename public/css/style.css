@@ -43,6 +43,50 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5rem;
 }
 
+/* KBBI Specific Styles */
+.kbbi-info {
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.kbbi-ejaan {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.kbbi-kelas-kata {
+    font-size: 0.8rem;
+}
+
+.kbbi-kata-dasar {
+    font-weight: 600;
+    color: var(--success-color);
+}
+
+/* Enhanced button styles for popular words */
+.popular-words .btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.popular-words .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.popular-words .btn small {
+    transition: opacity 0.3s ease;
+}
+
+.popular-words .btn:hover small {
+    opacity: 1 !important;
+}
+
 /* Hero Section */
 .hero-section {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
