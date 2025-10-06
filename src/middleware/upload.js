@@ -30,6 +30,20 @@ function fileFilter(req, file, cb) {
 
 const upload = multer({ storage, fileFilter });
 
+// Helper to build responsive srcset for uploaded images (assumes ads sizes)
+function buildAdSrcSet(imageUrl, position) {
+    // For simplicity, reuse the same URL; in production you'd generate variants
+    if (position === 'banner') {
+        return `${imageUrl} 728w`;
+    }
+    if (position === 'sidebar') {
+        return `${imageUrl} 300w`;
+    }
+    return `${imageUrl} 600w`;
+}
+
+module.exports = { upload, buildAdSrcSet };
+
 module.exports = { upload };
 
 
